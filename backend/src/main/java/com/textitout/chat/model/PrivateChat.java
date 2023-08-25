@@ -9,13 +9,19 @@ import java.util.List;
 
 @Document(collection = "privateChat")
 public class PrivateChat {
+
     @Id
     private String chatId;
+    private String user1;
+    private String user2;
+    private List<PrivateMessage> messages;
 
-    private String per1;
-    private String per2;
-
-    private List<PrivateMessage> messages = new ArrayList<PrivateMessage>();
+    public PrivateChat(String chatId, String user1, String user2, List<PrivateMessage> messages) {
+        this.chatId = chatId;
+        this.user1 = user1;
+        this.user2 = user2;
+        this.messages = messages;
+    }
 
     public String getChatId() {
         return chatId;
@@ -25,20 +31,20 @@ public class PrivateChat {
         this.chatId = chatId;
     }
 
-    public String getPer1() {
-        return per1;
+    public String getUser1() {
+        return user1;
     }
 
-    public void setPer1(String per1) {
-        this.per1 = per1;
+    public void setUser1(String user1) {
+        this.user1 = user1;
     }
 
-    public String getPer2() {
-        return per2;
+    public String getUser2() {
+        return user2;
     }
 
-    public void setPer2(String per2) {
-        this.per2 = per2;
+    public void setUser2(String user2) {
+        this.user2 = user2;
     }
 
     public List<PrivateMessage> getMessages() {
@@ -46,13 +52,6 @@ public class PrivateChat {
     }
 
     public void setMessages(List<PrivateMessage> messages) {
-        this.messages = messages;
-    }
-
-    public PrivateChat(String chatId, String per1, String per2, List<PrivateMessage> messages) {
-        this.chatId = chatId;
-        this.per1 = per1;
-        this.per2 = per2;
         this.messages = messages;
     }
 }

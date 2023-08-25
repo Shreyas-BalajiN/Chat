@@ -7,28 +7,37 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Document(collection="users")
-public class Users {
-    @Id
-    private String user_email;
+public class User {
 
-    private String user_name;
+    @Id
+    private String email;
+    private String name;
     private boolean status;
     private LocalDateTime timestamp;
     private String password;
-    private String getUser_email() {
-        return user_email;
+
+    public User(String email, String name, boolean status, LocalDateTime timestamp, String password) {
+        this.email = email;
+        this.name = name;
+        this.status = status;
+        this.timestamp = timestamp;
+        this.password = password;
     }
 
-    public void setUser_email(String user_email) {
-        this.user_email = user_email;
+    private String getEmail() {
+        return email;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isStatus() {
@@ -37,14 +46,6 @@ public class Users {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public Users(String user_email, String user_name, boolean status, LocalDateTime timestamp, String password) {
-        this.user_email = user_email;
-        this.user_name = user_name;
-        this.status = status;
-        this.timestamp = timestamp;
-        this.password = password;
     }
 
     public LocalDateTime getTimestamp() {

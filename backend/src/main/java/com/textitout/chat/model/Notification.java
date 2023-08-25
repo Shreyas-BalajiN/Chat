@@ -6,7 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Document("notifications")
-public class Notifications {
+public class Notification {
+
     @Id
     private String notificationId;
     private String sender; // Group name or email id
@@ -14,7 +15,7 @@ public class Notifications {
     private String message;
     private LocalDateTime timestamp;
 
-    public Notifications(String notificationId, String sender, String receiver, String message, LocalDateTime timestamp) {
+    public Notification(String notificationId, String sender, String receiver, String message, LocalDateTime timestamp) {
         this.notificationId = notificationId;
         this.sender = sender;
         this.receiver = receiver;

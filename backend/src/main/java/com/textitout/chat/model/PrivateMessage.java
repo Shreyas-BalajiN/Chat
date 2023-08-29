@@ -5,13 +5,23 @@ import org.springframework.data.annotation.Id;
 import java.time.LocalDateTime;
 
 public class PrivateMessage {
+
     @Id
     private String messageId;
-    private String message_type;
+    private String messageType;
     private LocalDateTime timestamp;
     private String message;
     private String sender;
     private boolean read;
+
+    public PrivateMessage(String messageId, String message_type, LocalDateTime timestamp, String message, String sender, boolean read) {
+        this.messageId = messageId;
+        this.messageType = message_type;
+        this.timestamp = timestamp;
+        this.message = message;
+        this.sender = sender;
+        this.read = read;
+    }
 
     public String getMessageId() {
         return messageId;
@@ -21,12 +31,12 @@ public class PrivateMessage {
         this.messageId = messageId;
     }
 
-    public String getMessage_type() {
-        return message_type;
+    public String getMessageType() {
+        return messageType;
     }
 
-    public void setMessage_type(String message_type) {
-        this.message_type = message_type;
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
     }
 
     public LocalDateTime getTimestamp() {
@@ -61,12 +71,4 @@ public class PrivateMessage {
         this.read = read;
     }
 
-    public PrivateMessage(String messageId, String message_type, LocalDateTime timestamp, String message, String sender, boolean read) {
-        this.messageId = messageId;
-        this.message_type = message_type;
-        this.timestamp = timestamp;
-        this.message = message;
-        this.sender = sender;
-        this.read = read;
-    }
 }

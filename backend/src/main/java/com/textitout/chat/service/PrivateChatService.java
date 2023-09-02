@@ -6,5 +6,15 @@ import java.util.List;
 
 public interface PrivateChatService {
 
-    List<PrivateChat> getAllPrivateChats();
+    PrivateChat getPrivateChatFromCache(String chatName);
+
+    void evictPrivateChatCache(String chatName);
+
+    PrivateChat getOrCreatePrivateChat(String chatName);
+    List<PrivateChat> getAllUserPrivateChats(String userEmail);
+
+    PrivateChat savePrivateChatCache(String chatName, PrivateChat privateChat);
+
+
+
 }

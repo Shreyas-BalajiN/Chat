@@ -4,20 +4,28 @@ package com.textitout.chat.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Document(collection = "privateChat")
-public class PrivateChat {
+public class PrivateChat implements Serializable {
 
     @Id
     private String chatId;
+    private String chatName;
     private String user1;
     private String user2;
     private List<PrivateMessage> messages;
 
-    public PrivateChat(String chatId, String user1, String user2, List<PrivateMessage> messages) {
+    public PrivateChat(){
+        this.messages = new ArrayList<>();
+
+    }
+
+    public PrivateChat(String chatId, String chatName, String user1, String user2, List<PrivateMessage> messages) {
         this.chatId = chatId;
+        this.chatName = chatName;
         this.user1 = user1;
         this.user2 = user2;
         this.messages = messages;
@@ -29,6 +37,14 @@ public class PrivateChat {
 
     public void setChatId(String chatId) {
         this.chatId = chatId;
+    }
+
+    public String getChatName() {
+        return chatName;
+    }
+
+    public void setChatName(String chatName) {
+        this.chatName = chatName;
     }
 
     public String getUser1() {
@@ -53,5 +69,9 @@ public class PrivateChat {
 
     public void setMessages(List<PrivateMessage> messages) {
         this.messages = messages;
+    }
+
+    public void addMessage(PrivateMessage privateMessage) {
+        this.messages.add(privateMessage);
     }
 }

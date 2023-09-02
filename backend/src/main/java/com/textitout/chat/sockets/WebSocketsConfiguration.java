@@ -6,8 +6,8 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
-@Configuration
-@EnableWebSocketMessageBroker
+
+
 public class WebSocketsConfiguration implements WebSocketMessageBrokerConfigurer {
 
     @Override
@@ -16,7 +16,6 @@ public class WebSocketsConfiguration implements WebSocketMessageBrokerConfigurer
                 .setAllowedOrigins("*")
                 .withSockJS();
     }
-
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");

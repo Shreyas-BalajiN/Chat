@@ -2,11 +2,11 @@ package com.textitout.chat.model;
 
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class PrivateMessage {
+public class PrivateMessage implements Serializable {
 
-    @Id
     private String messageId;
     private String messageType;
     private LocalDateTime timestamp;

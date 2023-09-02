@@ -13,6 +13,7 @@ public class Group {
     private String groupId;
     private String groupName;
     private List<String> users;
+    private List<GroupMessage> messages;
 
     public Group(String groupId, String groupName, List<String> users) {
         this.groupId = groupId;

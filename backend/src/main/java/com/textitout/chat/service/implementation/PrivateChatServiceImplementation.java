@@ -65,9 +65,11 @@ public class PrivateChatServiceImplementation implements PrivateChatService {
         return null;
     }
 
+
     @Override
+    @Cacheable(value = "privateChats", key = "#chatName")
     public PrivateChat getOrCreatePrivateChat(String chatName) {
-        // find an existing chat in MongoDB
+        // find an existing chat in MongoDB or redis cache
         PrivateChat existingChat = privateChatRepository.findByChatName(chatName);
 
         if (existingChat != null) {

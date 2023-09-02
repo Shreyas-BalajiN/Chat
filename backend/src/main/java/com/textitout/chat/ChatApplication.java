@@ -21,8 +21,8 @@ public class ChatApplication {
 				.entryTtl(Duration.ofHours(1)) // time to live of 1 hour
 				.disableCachingNullValues(); // dont cache null values
 
-		return RedisCacheManager.builder(connectionFactory) //
-				.cacheDefaults(config) //
+		return RedisCacheManager.builder(connectionFactory)
+				.cacheDefaults(config)
 				.build();
 	}
 	public static void main(String[] args) {

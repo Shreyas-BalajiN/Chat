@@ -4,13 +4,16 @@ import com.textitout.chat.model.PrivateChat;
 import com.textitout.chat.model.PrivateMessage;
 import com.textitout.chat.service.PrivateChatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/private")
 public class PrivateChatController {
 
     private final PrivateChatService privateChatService;
+
     @Autowired
     public PrivateChatController(PrivateChatService privateChatService) {
         this.privateChatService = privateChatService;

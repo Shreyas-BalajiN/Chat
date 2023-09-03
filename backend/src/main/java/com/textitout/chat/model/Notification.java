@@ -1,13 +1,8 @@
 package com.textitout.chat.model;
-<<<<<<< HEAD
-=======
-
->>>>>>> ce596a5f02f1afd40125ba7ffcb5802a7633e9e0
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-
 @Document(collection = "notifications")
 public class Notification {
 

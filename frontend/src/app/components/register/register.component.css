@@ -1,0 +1,23 @@
+.split-screen-container {
+    display: flex;
+    height: 100vh; /* Make the container take up the full viewport height */
+  }
+  
+  .left-half {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .right-half {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
